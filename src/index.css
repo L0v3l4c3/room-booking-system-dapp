@@ -1,0 +1,29 @@
+body {
+  padding: 15px;
+}
+
+.centered {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.z-10000 {
+  z-index: 10000;
+}
+
+.room-img {
+  width: 150px;
+  border-radius: 50%;
+  height: 150px;
+  margin-left: 10px;
+}
+
+.booking-btn {
+  margin: 0 20px;
+}
