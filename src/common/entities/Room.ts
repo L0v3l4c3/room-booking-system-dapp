@@ -16,7 +16,8 @@ class PersistentRoom implements RoomLookup {
   public getBookedHours(address: EthAddress) {
     const unavailableHours: number[] = [];
 
-    for (const [hour, occupant] of [...this.availabilities.entries()]) {
+    for (const [hour, occupant] of this.availabilities) {
+      console.log(this.availabilities)
       if (occupant !== nullAddress) {
         unavailableHours.push(hour);
       }
@@ -28,7 +29,7 @@ class PersistentRoom implements RoomLookup {
   public getCancellableReservations(address: EthAddress) {
     const cancellableReservations: number[] = [];
 
-    for (const [hour, occupant] of [...this.availabilities.entries()]) {
+    for (const [hour, occupant] of this.availabilities) {
       if (occupant === address) {
         cancellableReservations.push(hour);
       }
