@@ -17,7 +17,6 @@ class PersistentRoom implements RoomLookup {
     const unavailableHours: number[] = [];
 
     for (const [hour, occupant] of this.availabilities) {
-      console.log(this.availabilities)
       if (occupant !== nullAddress) {
         unavailableHours.push(hour);
       }
