@@ -39,8 +39,13 @@ contract BookingSystem {
         Rooms.push(Room({id: 19, name: "P19"}));
         Rooms.push(Room({id: 20, name: "P20"}));
     }
+    
+    modifier isCompany(Company company) {
+        require(company == Company.PEPSI || company == Company.COLA, "You must assign a valid company");
+        _;
+    }
 
-    function assignToCompany(Company company) public {
+    function assignToCompany(Company company) isCompany(company) public {
         Users[msg.sender] = company;
     }
 
